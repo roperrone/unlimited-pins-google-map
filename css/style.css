@@ -1,0 +1,31 @@
+/* 
+ * Always set the map height explicitly to define the size of the div element
+ * that contains the map. 
+ */
+ #map {
+    height: 100%;
+}
+
+.map-wrapper {
+    height: 50vh;
+}
+
+.gutenberg-flex-latLng {
+    display: flex; 
+    justify-content: left; 
+    column-gap: 30px;
+}
+
+.gmap-popup-content .popup-header {
+    font-weight: 800;
+    color: #AA0000;
+    font-size: 15px;
+    line-height: 1.1em;
+    margin: 0px 0px 5px 0px;
+    letter-spacing: 0.5px;
+}
+
+.gmap-popup-content .popup-link {
+    color: #aa0000;
+	text-decoration: underline;
+}
