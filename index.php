@@ -182,9 +182,8 @@ class UnlimitedPins {
 
     // Enable Google Maps ONLY if an API Key is provided
     if(get_option('unlimited_pins_options')) {
-      wp_enqueue_script( 'google-maps-marker-clusterer', "https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js", array(), "1.2.6");
-      
-      wp_enqueue_script( 'unlimited-pins', plugins_url( '/js/index.js' , __FILE__ ), array('google-maps-marker-clusterer'), '1.2.6');
+	  wp_enqueue_script( 'google-maps-marker-clusterer', plugins_url( '/js/markerclustererplus/dist/index.min.js', __FILE__), array(), "1.2.7");
+      wp_enqueue_script( 'unlimited-pins', plugins_url( '/js/index.js' , __FILE__ ), array('google-maps-marker-clusterer'), '1.4.0');
 
       wp_localize_script('unlimited-pins', 'unlimited_pins_config', array(
         'marker_path' => plugins_url( '/img' , __FILE__ ),
@@ -206,7 +205,7 @@ class UnlimitedPins {
       return;
 
     $api_key = get_option('unlimited_pins_options')['api_key'] ? esc_attr(get_option('unlimited_pins_options')['api_key']) : '';
-    echo '<script src="https://maps.googleapis.com/maps/api/js?key=' . $api_key .'&callback=initMap&v=weekly" defer></script>';
+    echo '<script src="https://maps.googleapis.com/maps/api/js?key=' . $api_key .'&callback=initMap&v=weekly"></script>';
   }
 
   /**
